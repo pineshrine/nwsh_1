@@ -4,3 +4,4 @@
 .vscode-server/
 .bashrc
 .gitconfig
+.ssh/
