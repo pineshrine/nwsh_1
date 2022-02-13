@@ -3,20 +3,23 @@ conf t
 ip domain name example.com
 crypto key generate rsa
 2048
-hostname sw4
+hostname HOSTNAME
 clock timezone JST 9 0
 lldp run
 ip vrf mgmt
 vlan 10
  name management
+ no shutdown
  exit
 interface Et3/3
  description management
+ switchport mode access
  switchport access vlan 10
+ spanning-tree bpdufilter enable
  exit
 interface vlan 10
  ip vrf forwarding mgmt
- ip address 192.168.6.103 255.255.255.0
+ ip address IPADDR 255.255.255.0
  no shutdown
  exit
 ip route vrf mgmt 0.0.0.0 0.0.0.0 192.168.6.1

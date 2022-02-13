@@ -1,0 +1,10 @@
+add method * ssh
+add user 192.168.6.100 pocadmin
+add password 192.168.6.100 password password
+add user 192.168.6.101 pocadmin
+add password 192.168.6.101 password password
+add user 192.168.6.102 pocadmin
+add password 192.168.6.102 password password
+add user 192.168.6.103 pocadmin
+add password 192.168.6.103 password password
+
