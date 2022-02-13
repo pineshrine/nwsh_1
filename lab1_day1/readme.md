@@ -78,5 +78,118 @@ Connection to 192.168.6.100 closed.
 ## 4. login & type specific command to multiple switches!
 
 ```
+$ cat machines.list | awk '{print $2}' | grep -v "^$" | xargs -IXXXX clogin -c "show lldp nei" XXXX
+192.168.6.100
+spawn ssh -x -l pocadmin 192.168.6.100
+Password: 
+sw1>enable
+Password: 
+sw1#
+sw1#terminal length 0
+sw1#terminal width 132
+sw1#show lldp nei
+Capability codes:
+    (R) Router, (B) Bridge, (T) Telephone, (C) DOCSIS Cable Device
+    (W) WLAN Access Point, (P) Repeater, (S) Station, (O) Other
 
+Device ID           Local Intf     Hold-time  Capability      Port ID
+sw3.example.com     Et0/0          120        R               Et1/1
+sw2.example.com     Et0/0          120        R               Et0/2
+sw4.example.com     Et0/0          120        R               Et2/2
+
+Total entries displayed: 3
+
+sw1#exit
+Connection to 192.168.6.100 closed by remote host.
+Connection to 192.168.6.100 closed.
+192.168.6.101
+spawn ssh -x -l pocadmin 192.168.6.101
+The authenticity of host '192.168.6.101 (192.168.6.101)' can't be established.
+RSA key fingerprint is SHA256:7chxbPlQVFzJq5ftFGWb3F7K5VIhdER3fAdqqLpKvZM.
+Are you sure you want to continue connecting (yes/no)? 
+Host 192.168.6.101 added to the list of known hosts.
+yes
+Warning: Permanently added '192.168.6.101' (RSA) to the list of known hosts.
+Password: 
+
+sw2>enable
+Password: 
+sw2#
+sw2#terminal length 0
+sw2#terminal width 132
+sw2#show lldp nei
+Capability codes:
+    (R) Router, (B) Bridge, (T) Telephone, (C) DOCSIS Cable Device
+    (W) WLAN Access Point, (P) Repeater, (S) Station, (O) Other
+
+Device ID           Local Intf     Hold-time  Capability      Port ID
+sw3.example.com     Et0/2          120        R               Et1/1
+sw1.example.com     Et0/2          120        R               Et0/0
+sw4.example.com     Et0/2          120        R               Et2/2
+
+Total entries displayed: 3
+
+sw2#exit
+Connection to 192.168.6.101 closed by remote host.
+Connection to 192.168.6.101 closed.
+192.168.6.102
+spawn ssh -x -l pocadmin 192.168.6.102
+The authenticity of host '192.168.6.102 (192.168.6.102)' can't be established.
+RSA key fingerprint is SHA256:At0Bb9vx6iQf9LPDzlq/VoikDACJDrAXyHJBLqpdx0I.
+Are you sure you want to continue connecting (yes/no)? 
+Host 192.168.6.102 added to the list of known hosts.
+yes
+Warning: Permanently added '192.168.6.102' (RSA) to the list of known hosts.
+Password: 
+
+sw3>enable
+Password: 
+sw3#
+sw3#terminal length 0
+sw3#terminal width 132
+sw3#show lldp nei
+Capability codes:
+    (R) Router, (B) Bridge, (T) Telephone, (C) DOCSIS Cable Device
+    (W) WLAN Access Point, (P) Repeater, (S) Station, (O) Other
+
+Device ID           Local Intf     Hold-time  Capability      Port ID
+sw2.example.com     Et1/1          120        R               Et0/2
+sw1.example.com     Et1/1          120        R               Et0/0
+sw4.example.com     Et1/1          120        R               Et2/2
+
+Total entries displayed: 3
+
+sw3#exit
+Connection to 192.168.6.102 closed by remote host.
+Connection to 192.168.6.102 closed.
+192.168.6.103
+spawn ssh -x -l pocadmin 192.168.6.103
+The authenticity of host '192.168.6.103 (192.168.6.103)' can't be established.
+RSA key fingerprint is SHA256:lQ2iY/SvH4IXk38Ce7ahdmczODRM3uo18af35mEbbF4.
+Are you sure you want to continue connecting (yes/no)? 
+Host 192.168.6.103 added to the list of known hosts.
+yes
+Warning: Permanently added '192.168.6.103' (RSA) to the list of known hosts.
+Password: 
+
+sw4>enable
+Password: 
+sw4#
+sw4#terminal length 0
+sw4#terminal width 132
+sw4#show lldp nei
+Capability codes:
+    (R) Router, (B) Bridge, (T) Telephone, (C) DOCSIS Cable Device
+    (W) WLAN Access Point, (P) Repeater, (S) Station, (O) Other
+
+Device ID           Local Intf     Hold-time  Capability      Port ID
+sw3.example.com     Et2/2          120        R               Et1/1
+sw2.example.com     Et2/2          120        R               Et0/2
+sw1.example.com     Et2/2          120        R               Et0/0
+
+Total entries displayed: 3
+
+sw4#exit
+Connection to 192.168.6.103 closed by remote host.
+Connection to 192.168.6.103 closed.
 ```
