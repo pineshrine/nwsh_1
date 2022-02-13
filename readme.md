@@ -20,7 +20,7 @@ it is coined term by me, shell arts's practical uses for network operation. unli
 
 ## 1st step!
 
-lab1_day1
+[lab1_day1](lab1_day1/)
 
 your 1st network shell arts! try to generate configs and operate multiple node w/ one-line code!
 
