@@ -18,18 +18,27 @@ it is coined term by me, shell arts's practical uses for network operation. unli
 
 # projects
 
-## 1. old-school html generator for lldp visualization
+## 1st step!
+
+初めてのネットワークシェル芸
+
+## multi vendor?
+
+## old-school html generator for lldp visualization
 
 阿部寛のLLDP。
 ネットワーク機器からlldp情報を引っ張ってきて、htmlにします。
 
-## 2. old-school cgi for configure switches
+## old-school cgi for configure switches
 
 # setup command
 
 ```
 $ apt-get install fping nmap m4 arp-scan rancid locate snmp snmp-mibs-downloader rsyslog wget curl jq
 $ export PATH=$PATH:/usr/lib/rancid/bin
+$ cp /usr/share/doc/rancid/examples/cloginrc.sample ~
+$ mv ~/cloginrc.sample ~/.cloginrc
+$ chmod 600 ~/.cloginrc
 $ git config --global user.name ****
 $ git config --global user.email *****
 $ mkdir ~/public_html
