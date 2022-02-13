@@ -196,7 +196,7 @@ Connection to 192.168.6.103 closed by remote host.
 Connection to 192.168.6.103 closed.
 ```
 
-seems to be a noisy? try this one:
+seems to be a little noisy? try this one:
 
 ```
 $ cat machines.list | awk '{print $2}' | grep -v "^$" | xargs -IXXXX clogin -c "show lldp nei" XXXX | grep -e "#show" -e "/"
@@ -237,3 +237,5 @@ sw4 Et0/0 <> sw1 Et0/0
 sw4 Et0/2 <> sw2 Et0/2
 sw4 Et1/1 <> sw3 Et1/1
 ```
+
+maybe we should rid of the example.com in some way (actually, we can `no ip domain` when after ssh key generated)
