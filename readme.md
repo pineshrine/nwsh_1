@@ -20,7 +20,11 @@ it is coined term by me, shell arts's practical uses for network operation. unli
 
 ## 1st step!
 
-初めてのネットワークシェル芸
+lab1_day1
+
+your 1st network shell arts! try to generate configs and operate multiple node w/ one-line code!
+
+初めてのネットワークシェル芸。Configを自動で生成し、複数台の機器をワンライナーで操作しよう。
 
 ## multi vendor?
 
@@ -34,7 +38,7 @@ it is coined term by me, shell arts's practical uses for network operation. unli
 # setup command
 
 ```
-$ apt-get install fping nmap m4 arp-scan rancid locate snmp snmp-mibs-downloader rsyslog wget curl jq
+$ apt-get install fping nmap m4 arp-scan rancid locate snmp snmp-mibs-downloader rsyslog wget curl jq gwak
 $ export PATH=$PATH:/usr/lib/rancid/bin
 $ cp /usr/share/doc/rancid/examples/cloginrc.sample ~
 $ mv ~/cloginrc.sample ~/.cloginrc

@@ -33,6 +33,8 @@ init_config/sw4.conf:hostname sw4
 init_config/sw4.conf: ip address 192.168.6.103 255.255.255.0
 ```
 
+now you can see output configs in init_config directory.
+
 ## 2. configure each switches
 
 just do it via eve-ng console
@@ -192,4 +194,46 @@ Total entries displayed: 3
 sw4#exit
 Connection to 192.168.6.103 closed by remote host.
 Connection to 192.168.6.103 closed.
+```
+
+seems to be a noisy? try this one:
+
+```
+$ cat machines.list | awk '{print $2}' | grep -v "^$" | xargs -IXXXX clogin -c "show lldp nei" XXXX | grep -e "#show" -e "/"
+sw1#show lldp nei
+sw3.example.com     Et0/0          120        R               Et1/1
+sw2.example.com     Et0/0          120        R               Et0/2
+sw4.example.com     Et0/0          120        R               Et2/2
+sw2#show lldp nei
+sw3.example.com     Et0/2          120        R               Et1/1
+sw1.example.com     Et0/2          120        R               Et0/0
+sw4.example.com     Et0/2          120        R               Et2/2
+sw3#show lldp nei
+sw2.example.com     Et1/1          120        R               Et0/2
+sw1.example.com     Et1/1          120        R               Et0/0
+sw4.example.com     Et1/1          120        R               Et2/2
+sw4#show lldp nei
+sw3.example.com     Et2/2          120        R               Et1/1
+sw2.example.com     Et2/2          120        R               Et0/2
+sw1.example.com     Et2/2          120        R               Et0/0
+$ cat machines.list | awk '{print $2}' | grep -v "^$" | xargs -IXXXX sh -c 'clogin -c "show lldp nei" XXXX | grep -e "#show" -e "/" > ./result/XXXX'
+$ ls result/
+192.168.6.100  192.168.6.101  192.168.6.102  192.168.6.103
+$ ls result/ | xargs -IXXXX sh -c "grep '#show' result/XXXX | awk -F# '{print \$1}' | xargs -IYYYY mv result/XXXX result/YYYY"
+$ ls result/
+sw1  sw2  sw3  sw4
+$ cd result/
+$ ls | grep ^sw | xargs -IXXXX sh -c 'cat XXXX | grep "/" | sed "s/.example.com//g" | awk "{print \$1\" \"\$2\" <> XXXX \"\$2}"' | sort
+sw1 Et0/2 <> sw2 Et0/2
+sw1 Et1/1 <> sw3 Et1/1
+sw1 Et2/2 <> sw4 Et2/2
+sw2 Et0/0 <> sw1 Et0/0
+sw2 Et1/1 <> sw3 Et1/1
+sw2 Et2/2 <> sw4 Et2/2
+sw3 Et0/0 <> sw1 Et0/0
+sw3 Et0/2 <> sw2 Et0/2
+sw3 Et2/2 <> sw4 Et2/2
+sw4 Et0/0 <> sw1 Et0/0
+sw4 Et0/2 <> sw2 Et0/2
+sw4 Et1/1 <> sw3 Et1/1
 ```

@@ -1,0 +1,4 @@
+sw1#show lldp nei
+sw3.example.com     Et0/0          120        R               Et1/1
+sw2.example.com     Et0/0          120        R               Et0/2
+sw4.example.com     Et0/0          120        R               Et2/2
