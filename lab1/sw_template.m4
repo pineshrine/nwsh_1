@@ -7,10 +7,18 @@ hostname HOSTNAME
 clock timezone JST 9 0
 lldp run
 ip vrf mgmt
+vlan 10
+ name management
+ exit
 interface Et3/3
- description MGT
+ description management
+ switchport access vlan 10
+ exit
+interface vlan 10
  ip vrf forwarding mgmt
  ip address IPADDR 255.255.255.0
+ no shutdown
+ exit
 ip route vrf mgmt 0.0.0.0 0.0.0.0 192.168.6.1
 username pocadmin secret 5 $1$R9Ha$hgeMTn9EPWNlW4CJuRAuF1
 line vty 0 4

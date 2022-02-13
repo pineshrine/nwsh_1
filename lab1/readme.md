@@ -3,6 +3,14 @@
 ## figure
 
 
+## value
+
+sw[1-4]
+
+management ip's are 192.168.6.100-103
+
+id/pass = admin/password/password
+
 ## generate initial configuration for switches by m4!
 
 ```
@@ -10,7 +18,6 @@ $ vi machines.list
 $ vi sw_template.m4
 $ mkdir init_config
 $ cat machines.list | grep -v "^$" | awk '{print "-DHOSTNAME=\""$1"\" -DIPADDR=\""$2"\" > ./init_config/"$1".conf"}' | xargs -IXXXX sh -c "m4 XXXX sw_template.m4"
-$ cat machines.list | grep -v "^$" | awk '{print "-DHOSTNAME=\""$1"\" -DIPADDR=\""$2"\""}' | xargs -IXXXX sh -c "m4 XXXX sw_template.m4"
 $ ls init_config/
 sw1.conf  sw2.conf  sw3.conf  sw4.conf
 $ grep -e "hostname " -e "ip address" init_config/sw*.conf
