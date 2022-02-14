@@ -26,14 +26,15 @@ your 1st network shell arts! try to generate configs and operate multiple node w
 
 初めてのネットワークシェル芸。Configを自動で生成し、複数台の機器をワンライナーで操作しよう。
 
-## multi vendor?
-
-## old-school html generator for lldp visualization
+## old-school html generator for lldp visualization　for cisco
 
 阿部寛のLLDP。
 ネットワーク機器からlldp情報を引っ張ってきて、htmlにします。
 
-## old-school cgi for configure switches
+## old-school cgi for configure switches for cisco
+
+## multi vendor?
+
 
 # setup command
 
