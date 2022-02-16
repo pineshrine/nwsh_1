@@ -20,8 +20,11 @@ it is coined term by me, shell arts's practical uses for network operation. unli
 ## network shell arts references
 
 https://www.slideshare.net/YusukeTatematsu/networkshellgei
+
 https://engineering.kdx.co.jp/entry/2021/04/22/170000
+
 https://engineering.kdx.co.jp/entry/2021/06/17/120000
+
 https://www.janog.gr.jp/meeting/janog48/wp-content/uploads/2021/05/janog48-zero-tatematsu.pdf
 
 
