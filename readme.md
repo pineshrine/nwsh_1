@@ -17,6 +17,14 @@ it is coined term by me, shell arts's practical uses for network operation. unli
 
 ネットワークシェル芸はmatsuの造語です。シェル芸をネットワーク機器の操作に応用したものですが、通常のシェル芸とは違い、別にワンライナーに拘わりません。ネットワーク機器へのサウスバウンドとしてはRANCIDを使用します。昔ながらの、シェルスクリプトを使った保守が困難なネットワーク機器の操作自動化と何が違うの？と言われたら、それそのものです。アレルギーがある方はご遠慮ください。
 
+## network shell arts references
+
+https://www.slideshare.net/YusukeTatematsu/networkshellgei
+https://engineering.kdx.co.jp/entry/2021/04/22/170000
+https://engineering.kdx.co.jp/entry/2021/06/17/120000
+https://www.janog.gr.jp/meeting/janog48/wp-content/uploads/2021/05/janog48-zero-tatematsu.pdf
+
+
 # projects
 
 ## 1st step!
