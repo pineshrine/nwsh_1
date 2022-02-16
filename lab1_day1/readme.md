@@ -224,19 +224,23 @@ $ ls result/ | xargs -IXXXX sh -c "grep '#show' result/XXXX | awk -F# '{print \$
 $ ls result/
 sw1  sw2  sw3  sw4
 $ cd result/
-$ ls | grep ^sw | xargs -IXXXX sh -c 'cat XXXX | grep "/" | sed "s/.example.com//g" | awk "{print \$1\" \"\$2\" <> XXXX \"\$5}"' | sort
-sw1 Et0/2 <> sw2 Et0/0
-sw1 Et1/1 <> sw3 Et0/0
-sw1 Et2/2 <> sw4 Et0/0
-sw2 Et0/0 <> sw1 Et0/2
-sw2 Et1/1 <> sw3 Et0/2
-sw2 Et2/2 <> sw4 Et0/2
-sw3 Et0/0 <> sw1 Et1/1
-sw3 Et0/2 <> sw2 Et1/1
-sw3 Et2/2 <> sw4 Et1/1
-sw4 Et0/0 <> sw1 Et2/2
-sw4 Et0/2 <> sw2 Et2/2
-sw4 Et1/1 <> sw3 Et2/2
+$ ls | grep ^sw | xargs -IXXXX sh -c 'cat XXXX | grep "/" | sed "s/.example.com//g" | awk "{print \$1\" \"\$5\" <> XXXX \"\$2}"' | sort
+$ ls | grep ^sw | xargs -IXXXX sh -c 'cat XXXX | grep "/" | sed "s/.example.com//g" | awk "{print \"XXXX \"\$2\" <> \"\$1\" \"\$5}"' | sort
+sw1 Et0/0 <> sw2 Et0/2
+sw1 Et0/0 <> sw3 Et1/1
+sw1 Et0/0 <> sw4 Et2/2
+sw2 Et0/2 <> sw1 Et0/0
+sw2 Et0/2 <> sw3 Et1/1
+sw2 Et0/2 <> sw4 Et2/2
+sw3 Et1/1 <> sw1 Et0/0
+sw3 Et1/1 <> sw2 Et0/2
+sw3 Et1/1 <> sw4 Et2/2
+sw4 Et2/2 <> sw1 Et0/0
+sw4 Et2/2 <> sw2 Et0/2
+sw4 Et2/2 <> sw3 Et1/1
 ```
 
 maybe we should rid of the example.com in some way (actually, we can `no ip domain` when after ssh key generated)
+
+## 5. let's configure them!
+

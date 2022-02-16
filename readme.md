@@ -23,7 +23,7 @@ it is coined term by me, shell arts's practical uses for network operation. unli
 
 [shell arts practical use cases 1., for campus AP deployment](https://engineering.kdx.co.jp/entry/2021/04/22/170000#ヒヤっとした話その２無線アクセスポイントを追加したかっただけなのに)
 
-[shell arts practical use cases 2., for HP ProCurve/H3C based Aruba SW](https://engineering.kdx.co.jp/entry/2021/06/17/120000)
+[shell arts practical use cases 2., for HP ProCurve/H3C based Aruba SW](https://engineering.kdx.co.jp/entry/2021/06/17/120000#ネットワークシェル芸再び)
 
 [shell arts practical use cases 3., for campus SW deployment](https://www.janog.gr.jp/meeting/janog48/wp-content/uploads/2021/05/janog48-zero-tatematsu.pdf)
 
