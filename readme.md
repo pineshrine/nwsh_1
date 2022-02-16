@@ -1,4 +1,3 @@
-for latest information, see index.html insted of this readme
 
 # what's this?
 
